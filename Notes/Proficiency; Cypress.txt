@@ -1,0 +1,121 @@
+//Example
+describe('My First Test', function() {
+	it('Makes an assertion', function() {
+		expect(true).to.equal(true)
+		cy.visit('https://example.cypress.io')
+		cy.pause()
+		cy.contains('type').click()
+
+		cy.url()
+		  .should('include', '/commands/actions')
+
+		cy.get('.action-email')
+		  .type('fake@email.com')
+		  .should('have.value', 'fake@email.com')
+	})
+})
+//Example
+describe('Rename payees group', function(){
+	it('I should get the payees group list', function(){
+		cy.request({
+			method: 'POST',
+			URL: '/svc/wr/payments/secure/payroll/v1/payee/group/list',
+			headers: Cypress.env('headers')
+		})
+	})
+})
+
+//Write a simple test
+describe('My First Test', function(){
+	it('Does not do much!', function(){
+		expect(true).to.equal(true)
+	})
+})
+ 
+//Visit a page
+describe('My First Test', function() {
+	it('Visits the Kitchen Sink', function() {
+		cy.visit('https://example.cypress.io')]
+	})
+})
+
+//Query for an element
+describe('My First Test', function(){
+	it('finds the content "type"', function(){
+		cy.visit('https://example.cypress.io')
+		cy.contains('type')
+	})
+})
+
+//Click an element
+describe('My First Test', function(){
+	it('clicks the link "type"', function(){
+		cy.visit(https://example.cypress.io)
+		cy.contains('type').click()
+	})
+})
+
+//Make an assertion
+describe('My First Test', function(){
+	it('clicking "type" navigates to a new url', function(){
+		cy.visit('https://example.cypress.io')
+		cy.contains('type').click()
+
+		//Should be on a new URL which includes '/commands/actions'
+		cy.url().should('include', '/commands/actions')
+	})
+})
+
+//Adding more commands and assertions
+describe('My First Test', function(){
+	cy.visit('https://example.cypress.io')
+	cy.contains('type').click()
+
+	//Should be on a new URL which includes '/commands/actions'
+	cy.url().should('include','/commands/actions')
+
+	//Get an input, type into it and verify that the value has been updated
+	cy.get('.action-email')
+	  .type('fake@email.com')
+	  .should('have.value','fake@email.com')
+})
+
+//Special commands
+describe('My First Test', function(){
+	it('clicking "type" shows the right headings', function(){
+		cy.visit('https://example.cypress.io')
+		cy.pause()
+		cy.contains('type').click()
+
+		//Should be on a new URL which includes '/commands/actions'
+		cy.url().should('include', '/commands/actions')
+
+		//Get an input, type into it and verify that the value has been updated
+		cy.get('.action-email')
+		  .type('fale@email.com')
+		  .should('have.value','fake@email.com')
+	})
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,105 @@
+Overview of Behavior-driven Development and Cucumber
+Introduction to the Gherkin Language: The Given-When-Then Notation
+Gherkin is the language of Cucumber.
+Building a Shared Understanding: BDD Requirements Discovery
+BDD, Behavior Driven Development
+----Did not understand "Your First Cucumber Test"
+----Did not understand "Demo: Running a Cucumber Scenario"
+
+	What problem does BDD solve?
+	What is the Project Structure for Cucumber projects?
+	What is the BDD process?
+	What is Gherkin?
+	What is Cucumber?
+	The role of Cucumber and Gherkin, Executable specifications
+	The Given-When-Then Syntax
+	Scenarios and features
+	Scenario outlines
+	Feature files and directory conventions
+	Data tables
+	Basic Gherkin scenarios
+	Backgrounds
+		When you use a Scenario Outline, you replace the piece of data that change, the test data, with tokens to tell Cucumber where to inject the test from the examples table.
+		Through BDD we get faster feedback through early and effective automation.
+		The Scenario Title 
+		src
+		Software you use to run executable specifications written in Gherkin
+		Scenario: Michael orders a smoothie
+		Scenario: Michael is on a diet
+		Scenario: Michael gets daily health news updates
+		Scenario Outline: Earning loyalty card points
+		Rules and examples are passed from the illustration phase into the Formulate stage where the team members(usually BA and Tester) format them so that they can act as both Specifications and Automated Acceptance Tests. 
+		project <- pom.xml
+		More Complex Scenarios
+		Initial state>Action under test>Expected outcomes
+		Illustrate(Acceptance criteria)>Formulate Executable specifications(Give,When,Then)>Automate(acceptance tests)>Validate>Feedback and Learning
+		Features are pieces of useful functionality that we can delivered to our users. Features are described using business rules and examples written as Scenarios. When built, the scenarios are then grouped together to form stories that help us plan and deliver our work. At the end of the script, once delivered the stories are scrapped but the Features remain important documentation.
+		Feature: Ordering smoothies
+		Executable Specifications are written in Gherkin(Given,When,Then) and Cucumber allows you to Automate those Specifications.
+		Embedded Tables
+		Business>BA>Developers>QA>repeat
+		BDD works to solve the communication gap that causes written specifications become malformed after years of development.
+		BDD is a collaboration and conversation practice that uses concrete examples and business rules, and a common language and a shared understanding.
+		Any step in a Background Sections will be executed at the start of each scenario so they are a great way to avoid duplication when you are setting up test context. It is important to remember that any steps in the background section will be run before every scenario in the Feature file without bias.
+		A business-readable notation for executable specifications
+			| Tea 		    | Earl Grey 		 			 | 10 		 |
+			| Regular smoothies | Banana smoothie 	   	 	 | 15 		 |
+			| Fancy smoothies   | Three-Berry-Blend smoothie | 20 		 |
+			| Drink Category    | Sample Drink 		 		 | Points Earned |
+			| Coffee 	    | Cappuccino 		 			 | 12 		 |
+			When Michael purchases 1 <Sample Drink>
+			When he receives his morning health news updates
+			When he orders an "Apple and Kale Smoothie"
+			When he orders an "Apple and Kale Smoothie"
+			What does the user want to do?
+			What business rule are you illustrating?
+			Then the articles should only include things about:
+			Then his order should be placed in the preparation queue
+			Then his order should be placed in the preparation queue
+			Then he should earn <Points Earned> points
+			test
+			test
+			src
+			Scenario: Michael orders many things
+			Scenario: Michael orders a smoothie
+			Scenario: Michael is on a diet
+			Multiple Then steps
+			Multiple Given steps
+			In order to maintain a healthy lifestyle
+			I want to be able to order fresh smoothies to my home each morning
+			Given Michael is a Morning Freshness member
+			Given Michael is a Morning Freshness member
+			Given Michael is a Morning Freshness member
+			Given Michael is a Morning Freshness member
+			Examples:
+			Describes the business context or situation
+			But he should be able to confirm his order
+			Background:
+			As a busy professional
+			And Michael is on a low-sugar diet plan
+			And he is interested in the following areas:
+			And he is interested in Dieting
+				| Running |
+				| Running |
+				| Product 		   		   | Quantity |
+				| Gym 	  |
+				| Gym	  |
+				| Dieting |
+				| Dieting |
+				| Croissants 		   	   | 2 	      |
+				| Cappuccino 		   	   | 1	      |
+				| Apple and Mango Smoothie | 1 	      |
+				When he places the following order:
+				When he orders an "Apple and Mango Smoothie"
+				When he orders an "Apple and Kale Smoothie"
+				Then his order should go to the preparation queue
+				Then his order should go to the preparation queue
+				Then he should be told that his order is high in sugar
+				resources <- ordering_smoothies.feature
+				resources <- Feature files
+				main <- Application code
+				java <- Step definitions and test code
+				Given Michael is a Morning Freshness member
+				Given Michael is a Morning Freshness member
+				And Michael is on a low-sugar diet plan
+				
