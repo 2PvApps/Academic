@@ -1,36 +1,31 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
 
-function Button(props) {
-    const handleClick = () => props.onClickFunction(props.increment);
-    return (
-        <button onClick={handleClick}>
-            +{props.increment}
-        </button>
-    );
+class Card extends React.Component {
+	render() {
+		return (
+			<div className="github-profile" style={{ margin:'1rem' }}>
+				<img src="https://placehold.it/75" />
+				<div className="info" style={{display:'inline-block', marginLeft: 10}}>
+					<div className="name" style={{fontSize:'125%'}}>Name here...</div>
+					<div className="company">Company here...</div>
+				</div>
+			</div>
+		);
+	}
 }
 
-function Display(props) {
-    return (
-        <div>{props.message}</div>
-    );
+class App extends React.Component {
+	render() {
+		return (
+			<div>
+				<div className="header">{this.title}</div>
+				<Card />
+			</div>);
+	}
 }
 
-function App() {
-    const [counter, setCounter] = React.useState(0);
-    const incrementCounter = (incrementValue) => setCounter(counter+incrementValue);
-
-    return (
-        <div>
-            <Button onClickFunction={incrementCounter} increment={1} />
-            <Button onClickFunction={incrementCounter} increment={5} />
-            <Button onClickFunction={incrementCounter} increment={10} />
-            <Button onClickFunction={incrementCounter} increment={100} />
-            <Display message={counter}/>
-        </div>
-    );
-}
-
-
-// ReactDOM.render(<MainApp />, document.getElementById('content'));
-ReactDOM.render(<App />, document.getElementById('content'));
+ReactDOM.render(
+	<App title="The GitHub Cards App" />
+	, mountNode
+);

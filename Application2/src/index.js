@@ -1,66 +1,36 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
 
-class Square extends React.Component {
-  render() {
+function Button(props) {
+    const handleClick = () => props.onClickFunction(props.increment);
     return (
-      <button className="square">
-        {/* TODO */}
-      </button>
+        <button onClick={handleClick}>
+            +{props.increment}
+        </button>
     );
-  }
 }
 
-class Board extends React.Component {
-  renderSquare(i) {
-    return <Square />;
-  }
-
-  render() {
-    const status = 'Next player: X';
-
+function Display(props) {
     return (
-      <div>
-        <div className="status">{status}</div>
-        <div className="board-row">
-          {this.renderSquare(0)}
-          {this.renderSquare(1)}
-          {this.renderSquare(2)}
-        </div>
-        <div className="board-row">
-          {this.renderSquare(3)}
-          {this.renderSquare(4)}
-          {this.renderSquare(5)}
-        </div>
-        <div className="board-row">
-          {this.renderSquare(6)}
-          {this.renderSquare(7)}
-          {this.renderSquare(8)}
-        </div>
-      </div>
+        <div>{props.message}</div>
     );
-  }
 }
 
-class Game extends React.Component {
-  render() {
+function App() {
+    const [counter, setCounter] = React.useState(0);
+    const incrementCounter = (incrementValue) => setCounter(counter+incrementValue);
+
     return (
-      <div className="game">
-        <div className="game-board">
-          <Board />
+        <div>
+            <Button onClickFunction={incrementCounter} increment={1} />
+            <Button onClickFunction={incrementCounter} increment={5} />
+            <Button onClickFunction={incrementCounter} increment={10} />
+            <Button onClickFunction={incrementCounter} increment={100} />
+            <Display message={counter}/>
         </div>
-        <div className="game-info">
-          <div>{/* status */}</div>
-          <ol>{/* TODO */}</ol>
-        </div>
-      </div>
     );
-  }
 }
 
-// ========================================
 
-ReactDOM.render(
-  <Game />,
-  document.getElementById('root')
-);
+// ReactDOM.render(<MainApp />, document.getElementById('content'));
+ReactDOM.render(<App />, document.getElementById('content'));
