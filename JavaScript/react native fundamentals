@@ -1,0 +1,2 @@
+props = static view
+state = renders whenever data is updated

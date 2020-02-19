@@ -1,0 +1,131 @@
+-- Searching Machine Data
+	-- Searching Machine Data
+		Index, Search Head, Forwarder
+		Ask a Question, this allows you to:
+			 * narrow the data, 
+			 * know specifically which field you should be looking through, 
+		 resulting in a faster query.
+	-- Splunk Data Sets
+		Splunk Data Options
+			* Semi-structured, 
+			* Machine generated, 
+			* Often overlooked
+		Where does this data come from? 
+			* Servers 		* Cloud,
+			* Workstations  * Regex
+-- Understanding the Basics of Splunk Search
+	-- Splunk Roles in Search
+		Every Splunk user falls into a role which gives the user different functionalities in Splunk.
+			* User can create and edit searches owned by user
+			* Power can edit shared object and alerts
+			* Admin can perform most Splunk search functions
+	-- Data Storage in Splunk
+		// Index - Splunk stores data in an index. Ingested data goes through the process of indexing which converts data to searchable events.
+		* Creates meta data
+		* Compress data
+		* Index for data
+		What is a Bucket?
+			* Splunk file system
+			* Stored by age of data
+	-- Bucket Management in Splunk
+		Creating Indexes
+			* Buck Allocation
+		Performance Requirements
+		Storage Requirements
+		Size Splunk Cluster
+		Bucket Lifecycle
+			* Hot Bucket (24 hours), Higher Performance/Cost
+			* Warm Bucket (3 months), Higher Performance/Cost
+			* Cold Bucket (3+ months), Lower Performance/Cost
+			* Frozen Bucket (1 year), Even Lower Performance/Cost
+-- Using Field Searches for Splunk Searches
+	-- Search Bar and Timeline
+		Navigating the Search Bar
+			* Search Bar 	  * Time Range
+			* Job		  	  * Timeline
+			* Saved Searches  * Modes
+		Splunk Search Modes
+			* Fast Mode, Field discovery turned off for searches. No event or field data for stats searches.
+			* Smart Mode, Field discovery turned on for event searches. No event or feild data for stats searches.
+			* Verbose Mode, All events and field data.
+	-- Search Field Operators
+	Field Operators - Characters used in Splunk queries for analyze search results. Common functions are wildcards, Booleans and comparison operators.
+		Search Field Operators
+			* Field Expressions
+				=,!=, <, >, <=, >=
+			* Boolean Operators
+				NOT, OR, AND
+			* Wildcards
+				where, *
+	-- Splunk Field Sidebar 
+		Field Sidebar - Located on the left portion of Splunk search. Pulls selected fields and interesting field for quick search results. Also offers quick reports such as top values and rare values.
+		Fields assigned
+			* Selected fields
+			* Interesting fields
+		Quick field numbers
+		Text fields α (string values, contains text)
+		Numeric fields # (numeric values, contains numbers)
+	-- Splunk Results Field
+		Splunk Search Results - Main portion of Splunk Search where events are displayed from search results.
+		Events displayed
+			* Formatting
+			* Per event
+		Displayed fields clickable
+			* Add
+			* Exclude	
+			* New
+		More Results Display Options
+			* Raw Events    * Patterns
+			* Statistics	* Visualizations
+		Best Practices in Splunk Search
+			* Build searches based on narrowest criteria
+			* Timeline impacts most searches
+			* Index data sets and plan for scale
+-- Building SPL Queries in Splunk
+	-- What Is SPL?
+		SPL - Search Processing Language is Splunk's syntax for writing queries in the Splunk platform.
+	-- Building SPL Queries
+		Chaining Commands - Search Processing Commands use the pipe | commands to chain search commands together.
+		SPL Keywords
+			* AS	* BY
+			* OVER  * WHERE
+	-- SPL Filtering & Modifying Search Results
+		* fields  - Splunk fields command add or remove fields listed.
+		* search  - Splunk search allows to searching raw text while using chaining command.
+		* dedup   - Splunk dedup removes duplicate fields from search results.
+		* rename  - Splunk rename allows for field names to be changes in search results.
+	-- SPL Ordering Search Results
+		* head 	  - Splunk head returns the first 10(default) events unless specified by another number.
+		* tail 	  - Splunk head returns the last 10(default) events unless specified by another number.
+		* sort 	  - Splunk sort will order field by ascending order.
+		* reverse - Splunk reverse will put search results in reverse order.
+		* tables  - SPL command for creating a table with specific fields.
+-- Performing Transformative Searches in Splunk
+	-- What Are Transformative Commands
+		Tranforming Commands - Allow for search commands to create data structure from field values. Frequently used for Splunk Enterprise visualizations.
+		* Top Command  - Returns frequent value for the defaulted top 10 results.
+		* Rare Command - Returns least frequent value for the defaulted top 10 results.
+		* Highlight Command - Shows results in raw events mode with fields highlighted.
+		* Contingency Command - Shows associations between fields in table.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,30 @@
+First Things First
+    ES 5       - Runs in the browser
+               - No compile required
+    ES 2015    - Lots of new features (classes, let, arrow, etc)
+    TypeScript - Superset of JavaScript
+               - Strong typing
+               - Great IDE tooling
+
+            
+               
+               
+Introduction to Components
+
+Templates, Interpolation, and Directives
+
+Data Binding & Pipes
+
+More on Components
+
+Building Nested Components
+
+Services and Dependency Injection
+
+Retrieving Data Using Http
+
+Navigation and Routing
+
+Angular Modules
+
+Building, Testing and Deploying with the CLI
